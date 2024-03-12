@@ -136,6 +136,17 @@ li {
         padding: 1rem;
         border-radius: var(--radius);
         text-align: center;
+        transition: all 0.2s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--green);
+          color: var(--grey);
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
       }
     }
   }
