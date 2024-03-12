@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+  /* Primary */
+  --green: hsl(75, 94%, 57%);
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 20%);
+  --dark-grey: hsl(0, 0%, 12%);
+  --black: hsl(0, 0%, 8%);
+
+  /* Typography 
+  *
+  * --fs: font-size
+  * --fw: font-weight
+  * --ff: font-family
+  *
+  */
+  --fs: 14px;
+  --ff-primary: "Inter", sans-serif;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+
+  /* Measurements */
+  --radius: 8px;
+  --radius-square: 50%;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+html {
+  font-size: var(--fs);
+  font-family: var(--ff-primary);
+  color: var(--white);
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: var(--fw-600);
+}
+
+main {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+/* Component */
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-grey);
+  border-radius: var(--radius);
+  margin-inline: auto;
+  box-shadow: 2px 2px 0.8rem var(--black);
+  gap: 1rem;
+  padding: 1.5rem;
+  width: min(80%, 24rem);
+
+  & div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .card__profile-container {
+    margin: 1rem 0;
+
+    & img {
+      border-radius: var(--radius-square);
+      width: 7rem;
+      height: 7rem;
+    }
+  }
+
+  & div > .card__title,
+  & div > .card__location {
+    line-height: 1.8;
+    font-weight: var(--fw-600);
+  }
+
+  & .card__title {
+    font-size: 1.5rem;
+  }
+
+  & .card__location {
+    color: var(--green);
+    font-size: 0.85rem;
+  }
+
+  & .card__desc {
+    text-align: center;
+    font-weight: var(--fw-400);
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+
+  & .card__links-container {
+    & ul {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+
+      & li {
+        background-color: var(--grey);
+        padding: 1rem;
+        border-radius: var(--radius);
+        text-align: center;
+      }
+    }
+  }
+}
